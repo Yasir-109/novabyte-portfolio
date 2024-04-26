@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static tailwind_tags %}
+{% load static %}
+{% block pagecontent %}
+
+<section class="bg-gray-900 py-16" id="Projects">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-200 mb-3 text-center">Our Projects</h2>
+        <p class="text-center mb-8"><a href="#" class="text-sm font-semibold leading-6 text-gray-100">Look at all our projects<span aria-hidden="true">&rarr;</span></a></p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {% for project in projects %}
+            <div class="relative group">
+                <a href="{% url 'project' pk=project.pk %}">
+                    <img src="{% static project.image %}" alt="{{ project.title }}" class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-lg font-semibold">{{ project.title }}</h3>
+                    </div>
+                </a>
+                <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
+                    {% for tag in project.projecttags_set.all %}
+                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">{{ tag.tag }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

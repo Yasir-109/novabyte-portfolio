@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static tailwind_tags %}
+{% load static %}
+{% block pagecontent %}
+
+
+<div class="isolate bg-gray-800 px-6 py-24 sm:py-32 lg:px-8">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+            <img src="{{ project.image.url }}" alt="{{ project.name }}" class="rounded-lg shadow-lg">
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-100 mb-4">{{ project.name }}</h2>
+            <p class="text-lg text-gray-300 mb-4">{{ project.description }}</p>
+            <p class="text-lg text-gray-300 mb-4">Category: {{ project.get_category_display }}</p>
+            <p class="text-lg text-gray-300 mb-4">Uploaded on: {{ project.date_uploaded }}</p>
+            <p class="text-lg text-gray-300 mb-4">Tags:</p>
+            <ul class="text-lg text-gray-300 mb-4">
+                {% for tag in project.projecttags_set.all %}
+                <li>{{ tag.tag }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{{ project.url }}" class="block text-lg font-semibold text-indigo-600 hover:text-indigo-400" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
