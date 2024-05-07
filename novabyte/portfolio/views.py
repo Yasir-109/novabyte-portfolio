@@ -14,6 +14,7 @@ def contact(request):
     
 def projects(request):
     projects = Project.objects.all()  # Assuming Project is the model for projects
+    print(projects)
     return render(request, 'portfolio/projects.html', {'projects': projects})
 
 def project(request, pk):

@@ -12,7 +12,7 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     url = models.URLField()
-    image = models.ImageField(upload_to='portfolio/images/')
+    image = models.ImageField(upload_to='images/')
     date_uploaded = models.DateTimeField(auto_now_add=True)
     category = models.CharField(max_length=20, choices=Category.choices)
 

@@ -1,97 +1,897 @@
 {% extends 'base.html' %}
 {% load static tailwind_tags %}
 
+{% block css %}
+
+<style>
+  .float-up {
+    animation: floatUp 4.5s ease forwards;
+    opacity: 1 !important;
+  }
+
+  @keyframes floatUp {
+    from {
+      transform: translateY(50px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .testimonial {
+    opacity: 0;
+    transition: opacity 5s ease;
+  }
+
+  .fade-in {
+    opacity: 1;
+  }
+
+  .category-button.active {
+    background-color: #a2dbe2;
+    /* Change to indicate active state */
+    color: rgb(36, 12, 3);
+  }
+</style>
+
+
+{% endblock %}
+
 {% block pagecontent %}
 
-  
 
-  <div class="relative isolate px-6 pt-14 lg:px-8">
-    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+
+<div class="relative isolate px-6 pt-14 lg:px-8">
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div
+      class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
     </div>
+  </div>
+  <div class="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-1 lg:grid-cols-2">
     <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
       <div class="text-center">
         <h1 class="text-4xl font-bold tracking-tight text-gray-200 sm:text-6xl">NovaByte</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-300">Empowering your digital journey.</p>
+        <p class="mt-6 text-lg leading-8 text-gray-300">Elevating Businesses with Tailored Software Solutions.</p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a href="#Projects" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="smoothScroll('#Projects')">Have a Look!</a>
+          <!-- <a href="#Projects"
+            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            onclick="smoothScroll('#Projects')">Have a Look!</a> -->
+          <a href="#Projects" onclick="smoothScroll('#Projects')"><button
+              class="group group-hover:before:duration-500 group-hover:after:duration-1000 after:duration-500 hover:border-sky-300  duration-500 before:duration-500 hover:duration-500 underline underline-offset-2    hover:after:-right-2 hover:before:top-8 hover:before:right-16 hover:after:scale-150 hover:after:blur-none hover:before:-bottom-8 hover:before:blur-none hover:bg-sky-300 hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-sky-900 relative bg-sky-800 h-16 w-64 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-sky-400 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-cyan-600 after:right-8 after:top-3 after:rounded-full after:blur">
+              Have a Look!
+            </button></a>
+
         </div>
       </div>
     </div>
-    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-        <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#6EE7B7] to-[#87CEEB] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    <div>
+      <img src="{% static 'images/NB.png' %}" alt="">
     </div>
-    <section class="bg-gray-900 py-16" id="Projects">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-gray-200 mb-3 text-center">Our Projects</h2>
-            <p class="text-center mb-8"><a href="#" class="text-sm font-semibold leading-6 text-gray-100">Look at all our projects<span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div
+      class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#6EE7B7] to-[#87CEEB] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
 
-          <div class="grid grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <div class="relative group">
-                <a href="#">
-                    <img src="{% static 'images/project-management.png' %}" alt="Project 1" class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
-                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <h3 class="text-white text-lg font-semibold">Project 1</h3>
-                    </div>
-                </a>
-                <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Sales</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Marketing</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">SEO</li>
-                </ul>
-            </div>
+  <!-- <section class="bg-gray-900 py-16" id="Services"> -->
 
-            <!-- Project 2 -->
-            <div class="relative group">
-                <a href="#">
-                    <img src="{% static 'images/project-management.png' %}" alt="Project 1" class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
-                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <h3 class="text-white text-lg font-semibold">Project 2</h3>
-                    </div>
-                </a>
-                <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Sales</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Marketing</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">SEO</li>
-                </ul>
+  <section id="Services"
+    class="bg-gray-900 relative block px-6 py-10 md:py-20 md:px-10  border-t border-b border-neutral-900 bg-neutral-900/30">
+
+
+    <div class="relative mx-auto max-w-5xl text-center">
+      <span class="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+        What we can do for you
+      </span>
+      <h2
+        class="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-4xl sm:text-5xl">
+        Our Development Services
+      </h2>
+      <p
+        class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+        The digital solutions you need to succeed, from web development to mobile apps, we've got you covered.
+      </p>
+    </div>
+
+
+    <div class="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <i class="fa-solid fa-code" style="font-size: 3rem;"></i>
+        <h3 class="mt-6 text-gray-200 text-2xl">Product Development</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          We can help you build custom software solutions that meet your unique business needs and drive growth.
+        </p>
+      </div>
+
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/dot-net.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">.Net Core Web API Development</h3>
+
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400"> We have a team of experienced .NET
+          Core developers who can help you build scalable and secure web APIs for your applications.
+        </p>
+      </div>
+
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/AWS.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">AWS Architect</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Our team of AWS architects can help you design and implement scalable and secure cloud solutions for your
+          business.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/mvc.png'%}" alt="" style="max-width: 35%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">MVC Development</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Build scalable and secure web applications with our team of experienced MVC developers.
+        </p>
+      </div>
+
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/python.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">Python Programming</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Our team of Python developers can help you build scalable and secure web applications using the Django
+          framework.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <i class="fa-brands fa-searchengin" style="font-size: 3rem;"></i>
+        <h3 class="mt-6 text-gray-200 text-2xl">SEO</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          We can help you optimize your website for search engines to improve your online visibility and attract more
+          organic traffic.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/social-media.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">Social Media Marketing</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          We can help you create and implement social media marketing strategies to reach your target audience and
+          grow your business.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/ecommerce.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">eCommerce Development</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          We can help you build custom eCommerce solutions that meet your unique business needs and drive growth.
+        </p>
+      </div>
+
+
+    </div>
+
+    <div class="absolute bottom-0 left-0 z-0 h-1/3 w-full border-b"
+      style="background-image: linear-gradient(to right top, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+    <div class="absolute bottom-0 right-0 z-0 h-1/3 w-full"
+      style="background-image: linear-gradient(to left top, rgba(220, 38, 38, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+
+  </section>
+
+  <section id="ProjectManagement"
+    class="bg-gray-900 relative block px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
+
+    <div class="relative mx-auto max-w-5xl text-center">
+      <span class="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+        Project Management
+      </span>
+      <h2
+        class="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-4xl sm:text-5xl">
+        Project Management
+      </h2>
+      <p
+        class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+        We use the following tools for project/product management.
+      </p>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Tools for Project Management -->
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <i class="fa-brands fa-trello" style="font-size: 3rem;"></i>
+        <h3 class="mt-6 text-gray-200 text-2xl">Trello</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Trello is a popular project management tool that provides a visual overview of tasks, making it easy to
+          manage projects.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <i class="fa-brands fa-jira" style="font-size: 3rem;"></i>
+        <h3 class="mt-6 text-gray-200 text-2xl">Jira</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Jira is a powerful project management tool designed for agile teams, allowing for efficient planning,
+          tracking, and reporting.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/Azure.png'%}" alt="" style="max-width: 20%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">Azure Dev Ops</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Azure DevOps is a comprehensive set of tools that help teams plan, build, and deliver software
+          efficiently, with integrated support for agile development.
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute top-0 left-0 z-0 h-1/3 w-full border-t"
+      style="background-image: linear-gradient(to right bottom, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+    <div class="absolute top-0 right-0 z-0 h-1/3 w-full"
+      style="background-image: linear-gradient(to left bottom, rgba(220, 38, 38, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+
+  </section>
+
+
+  <section id="DevelopmentEnvironment"
+    class="bg-gray-900 relative block px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
+
+
+    <div class="relative mx-auto max-w-5xl text-center">
+      <span class="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+        Development Environment
+      </span>
+      <h2
+        class="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-4xl sm:text-5xl">
+        Development Environment
+      </h2>
+      <p
+        class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+        Here are the development environments and tools we use to build and deploy your projects.
+      </p>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Development Environments -->
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/Docker.png'%}" alt="" style="max-width: 23%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">Docker</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Docker provides a consistent environment to develop and deploy applications using containerization
+          technology.
+        </p>
+      </div>
+
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/AWS.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">AWS</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Amazon Web Services (AWS) provides a wide range of cloud services for hosting, storage, and
+          computation, enabling scalable and flexible solutions.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/Azure.png'%}" alt="" style="max-width: 20%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">Microsoft Azure</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          Microsoft Azure is a cloud computing platform that offers a wide range of services for building,
+          managing, and deploying applications.
+        </p>
+      </div>
+
+      <div
+        class="hover:bg-black hover:scale-110 rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow transition-all duration-300 ease-in-out">
+        <img src="{% static 'images/Services/GoDaddy.png'%}" alt="" style="max-width: 30%; margin: 0 auto;">
+        <h3 class="mt-6 text-gray-200 text-2xl">GoDaddy</h3>
+        <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+          GoDaddy offers domain registration, hosting, and website building services, making it easier to manage
+          your online presence.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="absolute bottom-0 right-0 z-0 h-1/3 w-full border-b"
+      style="background-image: linear-gradient(to left top, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+    <div class="absolute bottom-0 left-0 z-0 h-1/3 w-full"
+      style="background-image: linear-gradient(to right top, rgba(28, 49, 77, 1), transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+
+    <!-- <div class="absolute bottom-0 left-0 z-0 h-1/3 w-full border-b"
+        style="background-image: linear-gradient(to right bottom, rgba(17, 24, 39, 0.5), rgba(28, 49, 77, 1)); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+    <div class="absolute top-0 right-0 z-0 h-1/3 w-full"
+        style="background-image: linear-gradient(to left bottom, rgba(17, 24, 39, 0.5), rgba(28, 49, 77, 1)); border-color: rgba(92, 79, 240, 0.2);">
+    </div> -->
+
+  </section>
+
+
+  <section id="Technologies"
+    class="bg-gray-900 relative block px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
+    <div class="absolute top-0 left-0 z-0 h-1/3 w-full border-t"
+      style="background-image: linear-gradient(to right bottom, rgba(28, 49, 77, 1) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+    <div class="absolute top-0 right-0 z-0 h-1/3 w-full"
+      style="background-image: linear-gradient(to left bottom, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">
+    </div>
+
+
+    <div class="relative mx-auto max-w-7xl z-10 text-center">
+      <span class="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+        Technologies
+      </span>
+      <h2
+        class="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-4xl sm:text-5xl">
+        Technologies We Support
+      </h2>
+      <p
+        class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+        We have expertise in a wide range of technologies to help you build the perfect solution for your business.
+      </p>
+
+      <!-- Navbar for technology categories -->
+      <div class="flex justify-center mb-8">
+        <button
+          class="category-button cursor-pointer uppercase bg-stone-900 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition rounded-md mr-4"
+          data-category="Frontend">Frontend</button>
+        <button
+          class="category-button cursor-pointer uppercase bg-stone-900 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition rounded-md mr-4"
+          data-category="Backend">Backend</button>
+        <button
+          class="category-button cursor-pointer uppercase bg-stone-900 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition rounded-md mr-4"
+          data-category="Database">Database</button>
+        <button
+          class="category-button cursor-pointer uppercase bg-stone-900 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition rounded-md mr-4"
+          data-category="API">API</button>
+        <button
+          class="category-button cursor-pointer uppercase bg-stone-900 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition rounded-md mr-4"
+          data-category="GitDevops">Git & Devops</button>
+        <button
+          class="category-button cursor-pointer uppercase bg-stone-900 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition rounded-md mr-4"
+          data-category="CMS">CMS</button>
+      </div>
+      <!-- Technologies -->
+      <div id="Frontend" class="technology-detail hidden flex justify-center flex-wrap">
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/React.png' %}" alt="React" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">React JS</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Vue.png' %}" alt="Vue" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Vue JS</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Bootstrap.png' %}" alt="Bootstrap" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Bootstrap</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/tailwind.png' %}" alt="Tailwind" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Tailwind CSS</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/html.png' %}" alt="html" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">HTML</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/css.png' %}" alt="css" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">CSS</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/js.png' %}" alt="js" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Javascript</span>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- Category 2 technologies -->
+      <div id="Backend" class="technology-detail hidden flex justify-center">
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Django.png' %}" alt="Django" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Django</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Laravel.png' %}" alt="Laravel" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Laravel</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Node.png' %}" alt="Node" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Node JS</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/PHP.png' %}" alt="PHP" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">PHP</span>
+        </div>
+      </div>
+      <!-- Category 3 technologies -->
+      <div id="Database" class="technology-detail hidden flex justify-center">
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/MongoDB.png' %}" alt="MongoDB" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Mongo DB</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/MySQL.png' %}" alt="MySQL" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">MySQL</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/PostgreSQL.png' %}" alt="PostgreSQL" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">PostgreSQL</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/SQLite.png' %}" alt="SQLite" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">SQLite</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Redis.png' %}" alt="Redis" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Redis</span>
+        </div>
+      </div>
+      <!-- Category 4 technologies -->
+      <div id="API" class="technology-detail hidden flex justify-center">
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/rest.png' %}" alt="rest" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">REST API</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/api.png' %}" alt="3rd party api" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Third Party APIs</span>
+        </div>
+      </div>
+      <!-- Category 4 technologies -->
+      <div id="GitDevops" class="technology-detail hidden flex justify-center">
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/GitHub.png' %}" alt="GitHub" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">GitHub</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/Docker.png' %}" alt="Docker" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">Docker</span>
+        </div>
+      </div>
+      <!-- Category 4 technologies -->
+      <div id="CMS" class="technology-detail hidden flex justify-center">
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/WordPress.png' %}" alt="WordPress" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">WordPress</span>
+        </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/WooCommerce.png' %}" alt="WooCommerce" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">WooCommerce</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+</section>
+
+
+<section class="Stats">
+  <div class=" dark:bg-gray-900">
+    <div class="pt-12 bg-gray-50 dark:bg-gray-900 sm:pt-20">
+      <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-extrabold leading-9 text-gray-900 dark:text-white sm:text-4xl sm:leading-10">
+            Our Success
+          </h2>
+          <p class="mt-3 text-xl leading-7 text-gray-600 dark:text-gray-400 sm:mt-4">
+            We have helped numerous clients achieve their goals and grow their businesses. Here are some of our
+            achievements.
+          </p>
+        </div>
+      </div>
+      <div class="pb-12 mt-10 bg-gray-50 dark:bg-gray-900 sm:pb-16">
+        <div class="relative">
+          <div class="absolute inset-0 h-1/2 bg-gray-50 dark:bg-gray-900"></div>
+          <div class="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8" id="count-up-section">
+            <div class="max-w-4xl mx-auto">
+              <dl class="bg-white dark:bg-gray-800 rounded-lg shadow-lg sm:grid sm:grid-cols-3">
+                <div
+                  class="flex flex-col p-6 text-center border-b border-gray-100 dark:border-gray-700 sm:border-0 sm:border-r">
+                  <dt class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500 dark:text-gray-400" id="item-1">
+                    Stars on GitHub
+                  </dt>
+                  <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600 dark:text-indigo-100"
+                    aria-describedby="item-1" id="starsCount">
+                    0
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col p-6 text-center border-t border-b border-gray-100 dark:border-gray-700 sm:border-0 sm:border-l sm:border-r">
+                  <dt class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    Satisfied Customers
+                  </dt>
+                  <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600 dark:text-indigo-100"
+                    id="downloadsCount">
+                    0
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col p-6 text-center border-t border-gray-100 dark:border-gray-700 sm:border-0 sm:border-l">
+                  <dt class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    Completed Projects
+                  </dt>
+                  <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600 dark:text-indigo-100"
+                    id="sponsorsCount">
+                    0
+                  </dd>
+                </div>
+              </dl>
             </div>
-            <!-- Project 3 -->
-            <div class="relative group">
-                <a href="#">
-                    <img src="{% static 'images/project-management.png' %}" alt="Project 1" class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
-                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <h3 class="text-white text-lg font-semibold">Project 3</h3>
-                    </div>
-                </a>
-                <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Sales</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Marketing</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">SEO</li>
-                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>
+
+
+<!-- </section> -->
+
+<section class="bg-gray-900 py-16" id="Projects">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-200 mb-3 text-center">Our Projects</h2>
+    <p class="text-center mb-8"><a href="#" class="text-sm font-semibold leading-6 text-gray-100">Look at all our
+        projects<span aria-hidden="true">&rarr;</span></a></p>
+
+    <div class="grid grid-cols-2 gap-8">
+      <!-- Proje</div>ct 1 -->
+      <div class="relative group">
+        <a href="#">
+          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+            class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
+          <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <h3 class="text-white text-lg font-semibold">Project 1</h3>
+          </div>
+        </a>
+        <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Sales</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Marketing</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            SEO</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="relative group">
+        <a href="#">
+          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+            class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
+          <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <h3 class="text-white text-lg font-semibold">Project 2</h3>
+          </div>
+        </a>
+        <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Sales</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Marketing</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            SEO</li>
+        </ul>
+      </div>
+      <!-- Project 3 -->
+      <div class="relative group">
+        <a href="#">
+          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+            class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
+          <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <h3 class="text-white text-lg font-semibold">Project 3</h3>
+          </div>
+        </a>
+        <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Sales</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Marketing</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            SEO</li>
+        </ul>
+      </div>
+      <!-- Project 4 -->
+      <div class="relative group">
+        <a href="#">
+          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+            class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
+          <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <h3 class="text-white text-lg font-semibold">Project 4</h3>
+          </div>
+        </a>
+        <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Sales</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            Marketing</li>
+          <li
+            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+            SEO</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="bg-neutral-950">
+  <section id="customer-feedback" class="max-w-5xl mx-auto w-full px-10 py-10 opacity-0">
+    <div class="bg-neutral-950">
+      <section class="max-w-5xl mx-auto w-full px-10 py-10">
+        <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold max-w-md mx-auto text-center text-white">Here's what our
+            <span class="text-[#45B3BA]">customers</span> have to say
+          </h2>
+          <p class="text-lg font-medium text-slate-400/70">Discover how our service can benefit you</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 w-full">
+          <div
+            class="testimonial border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
+            <div class="flex flex-col gap-y-3.5">
+              <p class="font-bold text-xl text-white">Efficient customer support</p>
+              <p class="font-medium text-white">The customer support team at our service is incredibly responsive and
+                helpful. They went above and beyond to assist me with my issue.</p>
             </div>
-            <!-- Project 4 -->
-            <div class="relative group">
-                <a href="#">
-                    <img src="{% static 'images/project-management.png' %}" alt="Project 1" class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
-                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <h3 class="text-white text-lg font-semibold">Project 4</h3>
-                    </div>
-                </a>
-                <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Sales</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">Marketing</li>
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">SEO</li>
-                </ul>
+            <div class="flex flex-col"><img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Emily Smith"
+                class="h-10 w-10">
+              <p class="pt-2 text-sm font-semibold text-white">Emily Smith</p>
+              <p class="text-sm font-medium text-slate-100/70">Marketing Manager at ABC Company</p>
+            </div>
+          </div>
+          <div
+            class="testimonial border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between">
+            <div class="flex flex-col gap-y-3.5">
+              <p class="font-bold text-xl text-white">Excellent product features</p>
+              <p class="font-medium text-white">The features offered by our service are outstanding. They have greatly
+                improved our workflow and efficiency.</p>
+            </div>
+            <div class="flex flex-col"><img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Michael Johnson"
+                class="h-10 w-10">
+              <p class="pt-2 text-sm font-semibold text-white">Michael Johnson</p>
+              <p class="text-sm font-medium text-slate-100/70">CEO at XYZ Corporation</p>
+            </div>
+          </div>
+          <div
+            class="testimonial border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between">
+            <div class="flex flex-col gap-y-3.5">
+              <p class="font-bold text-xl text-white">Seamless integration process</p>
+              <p class="font-medium text-white">Integrating our systems with our service was smooth and hassle-free. The
+                support team guided us through every step of the process.</p>
+            </div>
+            <div class="flex flex-col"><img src="https://randomuser.me/api/portraits/women/71.jpg" alt="Sarah Brown"
+                class="h-10 w-10">
+              <p class="pt-2 text-sm font-semibold text-white">Sarah Brown</p>
+              <p class="text-sm font-medium text-slate-100/70">CTO at XYZ Corporation</p>
+            </div>
+          </div>
+          <div
+            class="testimonial border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
+            <div class="flex flex-col gap-y-3.5">
+              <p class="font-bold text-xl text-white">Reliable service uptime</p>
+              <p class="font-medium text-white">Our service has consistently maintained high uptime, ensuring that our
+                operations run smoothly without any disruptions.</p>
+            </div>
+            <div class="flex flex-col"><img src="https://randomuser.me/api/portraits/men/71.jpg" alt="James White"
+                class="h-10 w-10">
+              <p class="pt-2 text-sm font-semibold text-white">James White</p>
+              <p class="text-sm font-medium text-slate-100/70">COO at XYZ Corporation</p>
             </div>
           </div>
         </div>
       </section>
-    
-      
+    </div>
+  </section>
+</div>
+
+
+<section class="py-24 ">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <h2 class="font-manrope text-5xl text-center font-bold text-gray-100 ">Our team </h2>
+    </div>
+    <div
+      class="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+
+      <div class="block group md:col-span-2 lg:col-span-1 ">
+        <div class="relative mb-6">
+          <img src="https://pagedone.io/asset/uploads/1696238374.png" alt="Antonio image"
+            class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
+        </div>
+        <h4
+          class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+          Antonio Roberto </h4>
+        <span
+          class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Founder</span>
+      </div>
+      <div class="block group md:col-span-2 lg:col-span-1 ">
+        <div class="relative mb-6">
+          <img src="https://pagedone.io/asset/uploads/1696238396.png" alt="Patricia image"
+            class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
+        </div>
+        <h4
+          class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+          Patricia Angely </h4>
+        <span
+          class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Co-Founder</span>
+      </div>
+      <div class="group group md:col-span-2 lg:col-span-1">
+        <div class="relative mb-6">
+          <img src="	https://pagedone.io/asset/uploads/1696238411.png" alt="Jerom image"
+            class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
+        </div>
+        <h4
+          class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+          Jerom Bell </h4>
+        <span
+          class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Chairman</span>
+      </div>
+      <div class="block group md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-4">
+        <div class="relative mb-6">
+          <img src="	https://pagedone.io/asset/uploads/1696238425.png" alt="Yasmine image"
+            class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
+        </div>
+        <h4
+          class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+          Yasmine Tano </h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">CEO</span>
+      </div>
+      <div class="block group min-[500px]:col-span-2 mx-auto md:col-span-2 lg:col-span-1 ">
+        <div class="relative mb-6">
+          <img src="https://pagedone.io/asset/uploads/1696238446.png" alt="Martin image"
+            class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
+        </div>
+        <h4
+          class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+          Martin Darbys</h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Product
+          Manager</span>
+      </div>
+
+    </div>
   </div>
+  </div>
+</section>
+
+
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".category-button");
+    const technologyDetails = document.querySelectorAll(".technology-detail");
+
+    buttons.forEach(button => {
+      button.addEventListener("mouseover", function () {
+        const category = this.dataset.category;
+        buttons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+        technologyDetails.forEach(detail => detail.classList.add("hidden"));
+        document.getElementById(category).classList.remove("hidden");
+      });
+    });
+  });
+
+  // Count-up animation
+  const targets = [
+    { element: document.getElementById('starsCount'), count: 4670, suffix: '+' },
+    { element: document.getElementById('downloadsCount'), count: 30, suffix: '+' },
+    { element: document.getElementById('sponsorsCount'), count: 100, suffix: '+' }
+  ];
+
+  const countUpObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        targets.forEach(target => {
+          animateCountUp(target, target.count, 2000); // Adjust duration as needed
+        });
+        countUpObserver.unobserve(entry.target);
+      }
+    });
+  });
+
+  const countUpSection = document.getElementById('count-up-section');
+  countUpObserver.observe(countUpSection);
+
+  function animateCountUp(target, finalCount, duration) {
+    let currentCount = 0;
+    const increment = Math.ceil(finalCount / (duration / 10));
+
+    const interval = setInterval(() => {
+      currentCount += increment;
+      if (currentCount >= finalCount) {
+        clearInterval(interval);
+        currentCount = finalCount;
+        target.element.textContent = currentCount + target.suffix;
+      } else {
+        target.element.textContent = currentCount;
+      }
+    }, 10);
+  }
+
+  // Floating-up animation
+  const customerFeedbackSection = document.getElementById('customer-feedback');
+
+  const floatUpObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('float-up');
+        floatUpObserver.unobserve(entry.target);
+      }
+    });
+  });
+
+  floatUpObserver.observe(customerFeedbackSection);
+
+
+  const fadeInObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        entry.target.classList.add('float-up');
+        fadeInObserver.unobserve(entry.target);
+      }
+    });
+  });
+
+  const testimonials = document.querySelectorAll('.testimonial');
+  testimonials.forEach(testimonial => {
+    fadeInObserver.observe(testimonial);
+  });
+
+</script>
+
 {% endblock %}
