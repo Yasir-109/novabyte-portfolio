@@ -1211,6 +1211,14 @@ select {
   width: 2.25rem;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }

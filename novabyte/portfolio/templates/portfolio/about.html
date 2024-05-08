@@ -3,82 +3,120 @@
 {% load static tailwind_tags %}
 
 {% block css %}
-    <style>
-        /* Glass effect */
-        .glass-bg {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-        }
-    </style>
+<style>
+    .menu__link {
+        color: #fff;
+        line-height: 2;
+        position: relative;
+    }
+
+    .menu__link::before {
+        content: '';
+        width: 0;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -.25rem;
+        right: 0;
+        transition: right .4s, width .4s, left .4s;
+    }
+
+    .menu__link:hover::before {
+        width: 100%;
+        left: 0;
+    }
+
+    /* Glass effect */
+    .glass-bg {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+    }
+</style>
 {% endblock %}
 
 {% block pagecontent %}
-    <div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 py-8">
 
-        <!-- Welcome Section -->
-        <section class="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-semibold mb-4">About NovaByte</h1>
-                <p class="text-lg md:text-xl">The company you trust as a partner for your software solutions.</p>
-            </div>
-        </section>
+    <!-- Welcome Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+        <div class="text-center">
+            <img src="{% static 'images/NB no text.png' %}" alt="NovaByte" class="w-56 h-auto mx-auto mb-4">
+            <h1 class="text-4xl md:text-6xl font-semibold mb-4">About NovaByte</h1>
+            <p class="text-lg md:text-xl">The company that is Elevating Businesses with Tailored Software Solutions.</p>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section class="min-h-80vh flex items-center justify-between bg-gray-800">
-            <div class="w-full md:w-1/2 p-8">
-                <h2 class="text-3xl md:text-4xl font-semibold mb-4">Who We Are</h2>
-                <p class="text-lg md:text-xl">At NovaByte, we are a team of passionate and experienced professionals dedicated to delivering innovative and high-quality software solutions to our clients worldwide. With a focus on excellence and customer satisfaction, we strive to exceed expectations in every project we undertake.</p>
-            </div>
-            <div class="w-full md:w-1/2">
-                <img src="{% static 'images/about-us/who-we-are.jpg' %}" alt="Who We Are" class="w-full h-auto glass-bg">
-            </div>
-        </section>
+    <!-- About Section -->
+    <section class="min-h-80vh flex items-center justify-between bg-gray-800">
+        <div class="w-full md:w-1/2 p-8">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">Who We Are</h2>
+            <p class="text-lg md:text-xl">At NovaByte, we are a team of passionate and experienced professionals
+                dedicated to delivering innovative and high-quality software solutions to our clients worldwide. With a
+                focus on excellence and customer satisfaction, we strive to exceed expectations in every project we
+                undertake.</p>
+        </div>
+        <div class="w-full md:w-1/2">
+            <img src="{% static 'images/about-us/who-we-are.jpg' %}" alt="Who We Are" class="w-full h-auto glass-bg">
+        </div>
+    </section>
 
-        <!-- Mission Section -->
-        <section class="min-h-80vh flex items-center justify-between bg-gray-900 text-white">
-            <div class="w-full md:w-1/2">
-                <img src="{% static 'images/about-us/our-mission.jpg' %}" alt="Our Mission" class="w-full h-auto glass-bg">
-            </div>
-            <div class="w-full md:w-1/2 p-8">
-                <h2 class="text-3xl md:text-4xl font-semibold mb-4">Our Mission</h2>
-                <p class="text-lg md:text-xl">Our mission is to empower businesses and organizations by providing them with cutting-edge software solutions that drive growth, efficiency, and success. We are committed to delivering value through technology, helping our clients achieve their goals and stay ahead in today's competitive landscape.</p>
-            </div>
-        </section>
+    <!-- Mission Section -->
+    <section class="min-h-80vh flex items-center justify-between bg-gray-900 text-white">
+        <div class="w-full md:w-1/2">
+            <img src="{% static 'images/about-us/our-mission.jpg' %}" alt="Our Mission" class="w-full h-auto glass-bg">
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">Our Mission</h2>
+            <p class="text-lg md:text-xl">Our mission is to empower businesses and organizations by providing them with
+                cutting-edge software solutions that drive growth, efficiency, and success. We are committed to
+                delivering value through technology, helping our clients achieve their goals and stay ahead in today's
+                competitive landscape.</p>
+        </div>
+    </section>
 
-        <!-- What We Do Section -->
-        <section class="min-h-80vh flex items-center justify-between bg-gray-800">
-            <div class="w-full md:w-1/2 p-8">
-                <h2 class="text-3xl md:text-4xl font-semibold mb-4">What We Do</h2>
-                <p class="text-lg md:text-xl">We specialize in custom software development, web development, mobile app development, enterprise solutions, UI/UX design, and quality assurance. Our goal is to provide tailored solutions that drive business growth and success.</p>
-            </div>
-            <div class="w-full md:w-1/2">
-                <img src="{% static 'images/about-us/what-we-do.jpg' %}" alt="What We Do" class="w-full h-auto glass-bg">
-            </div>
-        </section>
+    <!-- What We Do Section -->
+    <section class="min-h-80vh flex items-center justify-between bg-gray-800">
+        <div class="w-full md:w-1/2 p-8">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">What We Do</h2>
+            <p class="text-lg md:text-xl">We specialize in custom software development, web development, mobile app
+                development, enterprise solutions, UI/UX design, and quality assurance. Our goal is to provide tailored
+                solutions that drive business growth and success.</p>
+        </div>
+        <div class="w-full md:w-1/2">
+            <img src="{% static 'images/about-us/what-we-do.jpg' %}" alt="What We Do" class="w-full h-auto glass-bg">
+        </div>
+    </section>
 
-        <!-- Why Choose Us Section -->
-        <section class="min-h-80vh flex items-center justify-between bg-gray-900 text-white">
-            <div class="w-full md:w-1/2">
-                <img src="{% static 'images/about-us/why-choose-us.jpg' %}" alt="Why Choose Us" class="w-full h-auto glass-bg">
-            </div>
-            <div class="w-full md:w-1/2 p-8">
-                <h2 class="text-3xl md:text-4xl font-semibold mb-4">Why Choose Us</h2>
-                <p class="text-lg md:text-xl">Choose NovaByte for our expertise, innovation, collaboration, commitment to customer satisfaction, and ongoing support. We are dedicated to helping our clients achieve their goals and succeed in today's competitive market.</p>
-            </div>
-        </section>
+    <!-- Why Choose Us Section -->
+    <section class="min-h-80vh flex items-center justify-between bg-gray-900 text-white">
+        <div class="w-full md:w-1/2">
+            <img src="{% static 'images/about-us/why-choose-us.jpg' %}" alt="Why Choose Us"
+                class="w-full h-auto glass-bg">
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">Why Choose Us</h2>
+            <p class="text-lg md:text-xl">Choose NovaByte for our expertise, innovation, collaboration, commitment to
+                customer satisfaction, and ongoing support. We are dedicated to helping our clients achieve their goals
+                and succeed in today's competitive market.</p>
+        </div>
+    </section>
 
-        <!-- Get in Touch Section -->
-        <section class="min-h-80vh flex items-center justify-between bg-gray-800">
-            <div class="w-full md:w-1/2 p-8">
-                <h2 class="text-3xl md:text-4xl font-semibold mb-4">Get in Touch</h2>
-                <p class="text-lg md:text-xl">Ready to take your business to the next level with custom software solutions? <a href="{% url 'contact'%}" class="text-indigo-500 hover:underline">Contact us</a> today to discuss your project requirements and discover how NovaByte can help you achieve your goals.</p>
-            </div>
-            <div class="w-full md:w-1/2">
-                <img src="{% static 'images/about-us/get-in-touch.jpg' %}" alt="Get in Touch" class="w-full h-auto glass-bg">
-            </div>
-        </section>
+    <!-- Get in Touch Section -->
+    <section class="min-h-80vh flex items-center justify-between bg-gray-800">
+        <div class="w-full md:w-1/2 p-8">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">Get in Touch</h2>
+            <p class="text-lg md:text-xl">Ready to take your business to the next level with custom software solutions?
+                <a href="{% url 'contact'%}" class="text-indigo-500 hover:underline">Contact us</a> today to discuss
+                your project requirements and discover how NovaByte can help you achieve your goals.</p>
+        </div>
+        <div class="w-full md:w-1/2">
+            <img src="{% static 'images/about-us/get-in-touch.jpg' %}" alt="Get in Touch"
+                class="w-full h-auto glass-bg">
+        </div>
+    </section>
 
-    </div>
+</div>
 {% endblock %}

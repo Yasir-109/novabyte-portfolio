@@ -1,6 +1,32 @@
 {% extends 'base.html' %}
 {% load static tailwind_tags %}
 {% load static %}
+{% block css %}
+<style>
+    .menu__link {
+        color: #fff;
+        line-height: 2;
+        position: relative;
+    }
+
+    .menu__link::before {
+        content: '';
+        width: 0;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -.25rem;
+        right: 0;
+        transition: right .4s, width .4s, left .4s;
+    }
+
+    .menu__link:hover::before {
+        width: 100%;
+        left: 0;
+    }
+</style>
+{% endblock %}
 {% block pagecontent %}
 
 <section class="bg-gray-900 py-16" id="Projects">
@@ -12,15 +38,20 @@
             {% for project in projects %}
             <div class="relative group">
                 <a href="{% url 'project' pk=project.pk %}">
-                    <img src="{% static project.image %}" alt="{{ project.title }}" class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
-                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <img src="{% static project.image %}" alt="{{ project.title }}"
+                        class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <h3 class="text-white text-lg font-semibold">{{ project.title }}</h3>
                     </div>
                 </a>
                 <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
                     {% for tag in project.projecttags_set.all %}
-                    <li class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">{{ tag.tag }}</li>
+                    <li
+                        class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
+                        {{ tag.tag }}</li>
                     {% endfor %}
                 </ul>
             </div>

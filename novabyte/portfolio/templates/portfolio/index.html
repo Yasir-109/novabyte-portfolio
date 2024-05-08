@@ -4,6 +4,29 @@
 {% block css %}
 
 <style>
+  .menu__link {
+    color: #fff;
+    line-height: 2;
+    position: relative;
+  }
+
+  .menu__link::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -.25rem;
+    right: 0;
+    transition: right .4s, width .4s, left .4s;
+  }
+
+  .menu__link:hover::before {
+    width: 100%;
+    left: 0;
+  }
+
   .float-up {
     animation: floatUp 4.5s ease forwards;
     opacity: 1 !important;
@@ -34,9 +57,9 @@
     color: rgb(36, 12, 3);
   }
 
-  #ContactUs{
-    background-image: url('{% static "images/contact.jpg" %}'); 
-    background-size: cover; 
+  #ContactUs {
+    background-image: url('{% static "images/contact.jpg" %}');
+    background-size: cover;
     background-position: center;
   }
 </style>
@@ -458,6 +481,10 @@
           <img src="{% static 'images/Technologies/Redis.png' %}" alt="Redis" class="mx-auto mb-2 h-32">
           <span class="text-gray-300 text-sm">Redis</span>
         </div>
+        <div class="rounded-lg bg-slate-800 p-4 shadow m-2" style="width: calc(100% / 5 - 2rem);">
+          <img src="{% static 'images/Technologies/AWS RDS.png' %}" alt="AWS RDS" class="mx-auto mb-2 h-32">
+          <span class="text-gray-300 text-sm">AWS RDS</span>
+        </div>
       </div>
       <!-- Category 4 technologies -->
       <div id="API" class="technology-detail hidden flex justify-center">
@@ -565,56 +592,68 @@
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center">Project Team</h2>
     <p
-        class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
-        Our team consists of experts in various fields who work together to deliver high-quality projects to our clients.
-      </p>
+      class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+      Our team consists of experts in various fields who work together to deliver high-quality projects to our clients.
+    </p>
 
-    
+
     <!-- Team Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Team Member 1 -->
-      <div class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
-        <div class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
+      <div
+        class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
+        <div
+          class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
           <div class="text p-3 flex flex-col justify-evenly h-full">
             <span class="font-bold text-2xl">Full-Stack Pro Developer</span>
             <p class="subtitle">Expert development team dedicated to your project.</p>
           </div>
         </div>
       </div>
-      <div class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
-        <div class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
+      <div
+        class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
+        <div
+          class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
           <div class="text p-3 flex flex-col justify-evenly h-full">
             <span class="font-bold text-2xl">Project Manager</span>
             <p class="subtitle">Oversees project planning, execution, and delivery.</p>
           </div>
         </div>
       </div>
-      <div class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
-        <div class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
+      <div
+        class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
+        <div
+          class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
           <div class="text p-3 flex flex-col justify-evenly h-full">
             <span class="font-bold text-2xl">UI/UX Designer</span>
             <p class="subtitle">Crafts intuitive and engaging user interfaces.</p>
           </div>
         </div>
       </div>
-      <div class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
-        <div class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
+      <div
+        class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
+        <div
+          class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
           <div class="text p-3 flex flex-col justify-evenly h-full">
             <span class="font-bold text-2xl">Business Analyst</span>
             <p class="subtitle">Analyzes and optimizes business processes for efficiency.</p>
           </div>
         </div>
       </div>
-      <div class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
-        <div class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
+      <div
+        class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
+        <div
+          class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
           <div class="text p-3 flex flex-col justify-evenly h-full">
             <span class="font-bold text-2xl">QA Team</span>
             <p class="subtitle"> Ensures software quality through rigorous testing procedures.</p>
           </div>
         </div>
       </div>
-      <div class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
-        <div class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
+      <div
+        class="group overflow-hidden bg-neutral-50 rounded-xl bg-gradient-to-tr from-cyan-800 via-cyan-700 to-cyan-500 text-gray-50">
+        <div
+          class="before:duration-700 before:absolute before:w-28 before:h-28 before:bg-transparent before:blur-none before:border-8 before:opacity-50 before:rounded-full before:-left-4 before:-top-12 w-64 h-48  flex flex-col justify-between relative z-10 group-hover:before:top-28 group-hover:before:left-44 group-hover:before:scale-125 group-hover:before:blur">
           <div class="text p-3 flex flex-col justify-evenly h-full">
             <span class="font-bold text-2xl">Devops Team</span>
             <p class="subtitle">Collaborates to streamline development and deployment processes.</p>
@@ -622,63 +661,75 @@
         </div>
       </div>
 
-      
+
     </div>
   </div>
 </section>
 
 
 
-<section id="ContactUs" class="bg-gray-900 relative px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
+<section id="ContactUs"
+  class="bg-gray-900 relative px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between">
-    
+
     <!-- Contact Information -->
     <div class="max-w-md mx-auto mt-10 md:mt-0 text-center md:text-left">
       <h2 class="text-2xl font-bold text-white mb-6">Contact Us</h2>
       <p class="text-gray-300">Feel free to contact us for any inquiries or questions. We are happy to help!</p>
     </div>
-    
+
     <!-- Form -->
-    <div class="max-w-3xl mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12" style="width: 40%;">
-      
+    <div
+      class="max-w-3xl mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+      style="width: 40%;">
+
       <form method="post" action="#">
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-300" for="first-name">First Name</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="first-name" id="first-name" type="text" />
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="first-name"
+            id="first-name" type="text" />
         </div>
-        
+
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-300" for="last-name">Last Name</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="last-name" id="last-name" type="text" />
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="last-name"
+            id="last-name" type="text" />
         </div>
-        
+
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="email" id="email" type="email" />
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="email"
+            id="email" type="email" />
         </div>
 
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-300" for="phone-number">Phone</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="phone-number" id="phone-number" type="tel" />
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="phone-number"
+            id="phone-number" type="tel" />
         </div>
 
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-300" for="company">Company</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="company" id="company" type="text" />
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="company"
+            id="company" type="text" />
         </div>
 
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-300" for="message">Message</label>
-          <textarea name="message" id="message" class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" name="bio" id="bio"></textarea>
+          <textarea name="message" id="message"
+            class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" name="bio"
+            id="bio"></textarea>
         </div>
 
         <div class="flex justify-end">
-          <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit">Update Profile</button>
+          <button
+            class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80 shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"
+            type="submit">Send Message</button>
         </div>
       </form>
     </div>
 
-    
+
   </div>
 </section>
 
@@ -688,7 +739,8 @@
 <section class="bg-gray-900 py-16" id="Projects">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-gray-200 mb-3 text-center">Our Projects</h2>
-    <p class="text-center mb-8"><a href="#" class="text-sm font-semibold leading-6 text-gray-100">Look at all our
+    <p class="text-center mb-8"><a href="{% url 'projects' %}"
+        class="menu__link text-sm font-semibold leading-6 text-gray-100">Look at all our
         projects<span aria-hidden="true">&rarr;</span></a></p>
 
     <div class="grid grid-cols-2 gap-8">
@@ -864,7 +916,7 @@
 <section class="py-24 ">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mb-12">
-      <h2 class="font-manrope text-5xl text-center font-bold text-gray-100 ">Our team </h2>
+      <h2 class="font-manrope text-5xl text-center font-bold text-gray-100 ">Our Core team </h2>
     </div>
     <div
       class="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
@@ -936,6 +988,13 @@
 
 {% block scripts %}
 <script>
+
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuToggle.addEventListener('click', function () {
+    mobileMenu.classList.toggle('hidden');
+  });
 
   document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".category-button");
