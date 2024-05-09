@@ -4,6 +4,28 @@
 {% block css %}
 
 <style>
+  /* Scrollbar style for the whole page */
+  ::-webkit-scrollbar {
+    width: 12px;
+    /* Set the width of the scrollbar */
+  }
+
+  /* Scrollbar thumb style */
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.5);
+    /* Adjust box shadow */
+    border-radius: 100px;
+    /* Adjust border radius */
+  }
+
+  /* Optional: scrollbar track style */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Change scrollbar track color if needed */
+  }
+
+
   .menu__link {
     color: #fff;
     line-height: 2;
@@ -668,70 +690,7 @@
 
 
 
-<section id="ContactUs"
-  class="bg-gray-900 relative px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
-  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between">
 
-    <!-- Contact Information -->
-    <div class="max-w-md mx-auto mt-10 md:mt-0 text-center md:text-left">
-      <h2 class="text-2xl font-bold text-white mb-6">Contact Us</h2>
-      <p class="text-gray-300">Feel free to contact us for any inquiries or questions. We are happy to help!</p>
-    </div>
-
-    <!-- Form -->
-    <div
-      class="max-w-3xl mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
-      style="width: 40%;">
-
-      <form method="post" action="#">
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-300" for="first-name">First Name</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="first-name"
-            id="first-name" type="text" />
-        </div>
-
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-300" for="last-name">Last Name</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="last-name"
-            id="last-name" type="text" />
-        </div>
-
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="email"
-            id="email" type="email" />
-        </div>
-
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-300" for="phone-number">Phone</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="phone-number"
-            id="phone-number" type="tel" />
-        </div>
-
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-300" for="company">Company</label>
-          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="company"
-            id="company" type="text" />
-        </div>
-
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-300" for="message">Message</label>
-          <textarea name="message" id="message"
-            class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" name="bio"
-            id="bio"></textarea>
-        </div>
-
-        <div class="flex justify-end">
-          <button
-            class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80 shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"
-            type="submit">Send Message</button>
-        </div>
-      </form>
-    </div>
-
-
-  </div>
-</section>
 
 
 <!-- </section> -->
@@ -739,29 +698,29 @@
 <section class="bg-gray-900 py-16" id="Projects">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-gray-200 mb-3 text-center">Our Projects</h2>
-    <p class="text-center mb-8"><a href="{% url 'projects' %}"
+    <!-- <p class="text-center mb-8"><a href="{% url 'projects' %}"
         class="menu__link text-sm font-semibold leading-6 text-gray-100">Look at all our
-        projects<span aria-hidden="true">&rarr;</span></a></p>
+        projects<span aria-hidden="true">&rarr;</span></a></p> -->
 
     <div class="grid grid-cols-2 gap-8">
       <!-- Proje</div>ct 1 -->
       <div class="relative group">
-        <a href="#">
-          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+        <a href="https://dukanlay.com/">
+          <img src="{% static 'images/Project1.png' %}" alt="Project 1"
             class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
           <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
           <div
             class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-            <h3 class="text-white text-lg font-semibold">Project 1</h3>
+            <h3 class="text-white text-lg font-semibold">Dukanlay</h3>
           </div>
         </a>
         <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            Sales</li>
+            Front End</li>
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            Marketing</li>
+            Back End</li>
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
             SEO</li>
@@ -770,65 +729,57 @@
 
       <!-- Project 2 -->
       <div class="relative group">
-        <a href="#">
-          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+        <a href="https://byshahnawaz.com/">
+          <img src="{% static 'images/Project2.png' %}" alt="Project 1"
             class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
           <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
           <div
             class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-            <h3 class="text-white text-lg font-semibold">Project 2</h3>
+            <h3 class="text-white text-lg font-semibold">byshahnawaz</h3>
           </div>
         </a>
         <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            Sales</li>
+            Front End</li>
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
             Marketing</li>
-          <li
-            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            SEO</li>
         </ul>
       </div>
       <!-- Project 3 -->
       <div class="relative group">
         <a href="#">
-          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+          <img src="{% static 'images/Project3.png' %}" alt="Project 1"
             class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
           <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
           <div
             class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-            <h3 class="text-white text-lg font-semibold">Project 3</h3>
+            <h3 class="text-white text-lg font-semibold">Track Me App</h3>
           </div>
         </a>
         <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            Sales</li>
-          <li
-            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            Marketing</li>
-          <li
-            class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            SEO</li>
+            Mobile Dev</li>
+          
         </ul>
       </div>
       <!-- Project 4 -->
       <div class="relative group">
         <a href="#">
-          <img src="{% static 'images/project-management.png' %}" alt="Project 1"
+          <img src="{% static 'images/Project4.png' %}" alt="Project 1"
             class="w-full h-auto rounded-lg transition duration-300 transform hover:scale-105">
           <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition duration-300"></div>
           <div
             class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-            <h3 class="text-white text-lg font-semibold">Project 4</h3>
+            <h3 class="text-white text-lg font-semibold">Miche</h3>
           </div>
         </a>
         <ul class="absolute inset-x-0 bottom-0 flex justify-center space-x-2 py-2">
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
-            Sales</li>
+            UI</li>
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
             Marketing</li>
@@ -919,18 +870,18 @@
       <h2 class="font-manrope text-5xl text-center font-bold text-gray-100 ">Our Core team </h2>
     </div>
     <div
-      class="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+      class="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-6 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
 
       <div class="block group md:col-span-2 lg:col-span-1 ">
         <div class="relative mb-6">
-          <img src="https://pagedone.io/asset/uploads/1696238374.png" alt="Antonio image"
+          <img src="{% static 'images/Team/Founder.jpg' %}" alt="Antonio image"
             class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
         </div>
         <h4
           class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
-          Antonio Roberto </h4>
-        <span
-          class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Founder</span>
+          Ahmad Sanobar </h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Founder of
+          NovaByte</span>
       </div>
       <div class="block group md:col-span-2 lg:col-span-1 ">
         <div class="relative mb-6">
@@ -945,35 +896,46 @@
       </div>
       <div class="group group md:col-span-2 lg:col-span-1">
         <div class="relative mb-6">
-          <img src="	https://pagedone.io/asset/uploads/1696238411.png" alt="Jerom image"
+          <img src="{% static 'images/Team/CEO.jpg' %}" alt="Jerom image"
             class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
         </div>
         <h4
           class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
-          Jerom Bell </h4>
-        <span
-          class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Chairman</span>
+          Arslan Rasheed </h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">CEO</span>
       </div>
       <div class="block group md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-4">
         <div class="relative mb-6">
-          <img src="	https://pagedone.io/asset/uploads/1696238425.png" alt="Yasmine image"
+          <img src="{% static 'images/Team/Full Stack.jpg' %}" alt="Yasmine image"
             class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
         </div>
         <h4
           class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
-          Yasmine Tano </h4>
-        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">CEO</span>
+          Taimoor </h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Senior Pro
+          Full Stack Developer</span>
       </div>
       <div class="block group min-[500px]:col-span-2 mx-auto md:col-span-2 lg:col-span-1 ">
         <div class="relative mb-6">
-          <img src="https://pagedone.io/asset/uploads/1696238446.png" alt="Martin image"
+          <img src="{% static 'images/Team/SQA.jpg'%}" alt="Martin image"
             class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
         </div>
         <h4
           class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
-          Martin Darbys</h4>
-        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Product
-          Manager</span>
+          Muqadas Muneeb</h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Senior
+          SQA</span>
+      </div>
+      <div class="block group min-[500px]:col-span-2 mx-auto md:col-span-2 lg:col-span-1 ">
+        <div class="relative mb-6">
+          <img src="{% static 'images/Team/Project Manager.jpg'%}" alt="Martin image"
+            class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" />
+        </div>
+        <h4
+          class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+          Yasir Maqsood</h4>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Senior
+          Project Manager</span>
       </div>
 
     </div>
@@ -981,7 +943,70 @@
   </div>
 </section>
 
+<section id="ContactUs"
+  class="bg-gray-900 relative px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between">
 
+    <!-- Contact Information -->
+    <div class="max-w-md mx-auto mt-10 md:mt-0 text-center md:text-left">
+      <h2 class="text-2xl font-bold text-white mb-6">Contact Us</h2>
+      <p class="text-gray-300">Feel free to contact us for any inquiries or questions. We are happy to help!</p>
+    </div>
+
+    <!-- Form -->
+    <div
+      class="max-w-3xl mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+      style="width: 40%;">
+
+      <form method="post" action="#">
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-300" for="first-name">First Name</label>
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="first-name"
+            id="first-name" type="text" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-300" for="last-name">Last Name</label>
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="last-name"
+            id="last-name" type="text" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="email"
+            id="email" type="email" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-300" for="phone-number">Phone</label>
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="phone-number"
+            id="phone-number" type="tel" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-300" for="company">Company</label>
+          <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" name="company"
+            id="company" type="text" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-300" for="message">Message</label>
+          <textarea name="message" id="message"
+            class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" name="bio"
+            id="bio"></textarea>
+        </div>
+
+        <div class="flex justify-end">
+          <button
+            class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80 shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"
+            type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</section>
 
 </div>
 {% endblock %}
@@ -1013,9 +1038,9 @@
 
   // Count-up animation
   const targets = [
-    { element: document.getElementById('starsCount'), count: 4670, suffix: '+' },
-    { element: document.getElementById('downloadsCount'), count: 30, suffix: '+' },
-    { element: document.getElementById('sponsorsCount'), count: 100, suffix: '+' }
+    { element: document.getElementById('starsCount'), count: 2670, suffix: '+' },
+    { element: document.getElementById('downloadsCount'), count: 20, suffix: '+' },
+    { element: document.getElementById('sponsorsCount'), count: 50, suffix: '+' }
   ];
 
   const countUpObserver = new IntersectionObserver(entries => {
