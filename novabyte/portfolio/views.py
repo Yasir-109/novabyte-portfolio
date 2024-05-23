@@ -27,22 +27,24 @@ def project(request, pk):
 
 
 def contact_submit(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['first-name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            company = form.cleaned_data['company']
-            phone_number = form.cleaned_data['phone-number']
-            send_mail(
-                f'New message from {name}',
-                f'Name: {name}\nEmail: {email}\nCompany: {company}\nPhone Number: {phone_number}\n\nMessage:\n{message}',
-                settings.COMPANY_EMAIL,
-                [settings.COMPANY_EMAIL],
-                fail_silently=False,
-            )
-            return render(request, 'portfolio/index.html')
-    else:
-        form = ContactForm()
+    try:
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                name = form.cleaned_data['first-name']
+                email = form.cleaned_data['email']
+                message = form.cleaned_data['message']
+                company = form.cleaned_data['company']
+                phone_number = form.cleaned_data['phone-number']
+                send_mail(
+                    f'New message from {name}',
+                    f'Name: {name}\nEmail: {email}\nCompany: {company}\nPhone Number: {phone_number}\n\nMessage:\n{message}',
+                    settings.COMPANY_EMAIL,
+                    [settings.COMPANY_EMAIL],
+                    fail_silently=False,
+                )
+                return render(request, 'portfolio/index.html')
+    except Exception as e:
+        print(f"Failed to send email: {e}")
+    form = ContactForm()
     return render(request, 'portfolio/contact.html', {'form': form})

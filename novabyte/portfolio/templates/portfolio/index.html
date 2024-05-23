@@ -762,7 +762,7 @@
           <li
             class="rounded-full border border-sky-100 bg-sky-50 px-2 py-0.5 dark:text-sky-300 dark:border-sky-500/15 dark:bg-sky-500/10">
             Mobile Dev</li>
-          
+
         </ul>
       </div>
       <!-- Project 4 -->
@@ -812,8 +812,7 @@
               <p class="font-medium text-white">The customer support team at our service is incredibly responsive and
                 helpful. They went above and beyond to assist me with my issue.</p>
             </div>
-            <div class="flex flex-col"><img src="{% static 'images/AS.png' %}" alt="Emily Smith"
-                class="h-10 w-10">
+            <div class="flex flex-col"><img src="{% static 'images/AS.png' %}" alt="Emily Smith" class="h-10 w-10">
               <p class="pt-2 text-sm font-semibold text-white">Abdul Samad</p>
               <p class="text-sm font-medium text-slate-100/70">AS Group of Companies</p>
             </div>
@@ -891,8 +890,7 @@
         <h4
           class="text-xl font-semibold text-gray-300 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
           Arslan Rasheed </h4>
-        <span
-          class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">CEO</span>
+        <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">CEO</span>
       </div>
       <div class="group group md:col-span-2 lg:col-span-1">
         <div class="relative mb-6">
@@ -1006,11 +1004,18 @@
 {% block scripts %}
 <script>
 
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  document.addEventListener("DOMContentLoaded", function () {
+    const openMenuButton = document.getElementById('open-button');
+    const closeMenuButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  mobileMenuToggle.addEventListener('click', function () {
-    mobileMenu.classList.toggle('hidden');
+    openMenuButton.addEventListener('click', function () {
+      mobileMenu.classList.remove('hidden');
+    });
+
+    closeMenuButton.addEventListener('click', function () {
+      mobileMenu.classList.add('hidden');
+    });
   });
 
   document.addEventListener("DOMContentLoaded", function () {
