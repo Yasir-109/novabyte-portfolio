@@ -120,3 +120,23 @@
 
 </div>
 {% endblock %}
+
+
+{% block scripts %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const openMenuButton = document.getElementById('open-button');
+    const closeMenuButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    openMenuButton.addEventListener('click', function () {
+      mobileMenu.classList.remove('hidden');
+    });
+
+    closeMenuButton.addEventListener('click', function () {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>
+{% endblock %}
